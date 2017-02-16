@@ -1,0 +1,5 @@
+bin
+.vscode
+*.tgz
+.travis.yml
+.npmignore

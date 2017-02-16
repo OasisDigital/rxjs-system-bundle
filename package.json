@@ -1,0 +1,29 @@
+{
+  "name": "rxjs-system-bundle",
+  "version": "5.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "node bin/make_bundle.js",
+    "next": "node bin/inc_version.js",
+    "clean": "del Rx.* *.tgz",
+    "test": "echo \"Error: tests not yet implemented\" && exit 1"
+  },
+  "author": "Kyle Cordes <kyle.cordes@oasisdigital.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "api-npm": "^1.0.0",
+    "del-cli": "^0.2.1",
+    "rxjs": "5.0.0",
+    "symbol-observable": "^1.0.4",
+    "systemjs": "^0.19.41",
+    "systemjs-builder": "^0.15.34"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:OasisDigital/rxjs-system-bundle.git"
+  },
+  "engines": {
+    "npm": ">=4.0.5"
+  }
+}
