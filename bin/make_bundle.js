@@ -36,7 +36,7 @@ function bundle() {
 matchVersion(err => {
   if (err) {
     console.error(err);
-    exit(60);
+    process.exit(60);
   } else {
     bundle();
   }

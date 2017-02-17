@@ -12,11 +12,11 @@ api.getdetails('rxjs', data => {
   const currentIndex = versionList.indexOf(rxjsVersion);
   if (currentIndex == -1) {
     console.error("current version not in the list");
-    exit(50);
+    process.exit(50);
   }
   if (currentIndex == versionList.length - 1) {
     console.error("At most recent version");
-    exit(51);
+    process.exit(51);
   }
   const nextVersion = versionList[currentIndex + 1];
 
@@ -27,7 +27,7 @@ api.getdetails('rxjs', data => {
   matchVersion(err => {
     if (err) {
       console.error(err);
-      exit(60);
+      process.exit(60);
     }
   });
 });

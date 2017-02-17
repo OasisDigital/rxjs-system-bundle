@@ -32,9 +32,17 @@ Therefore the UMB bundle is available at a URL like this:
 https://unpkg.com/rxjs-system-bundle@5.1.1/Rx.system.min.js
 
 Both minified and plain variations are published, both including source maps. To
-see the exact filenames, look at:
+see the exact filenames available, install the package locally:
 
-https://unpkg.com/rxjs-system-bundle/
+```
+npm install rxjs-system-bundle
+```
+
+and look in node_modules/rxjs-system-bundle, or look at:
+
+https://unpkg.com/rxjs-system-bundle@5.1.1/
+
+(The set of files is the same for each version.)
 
 ## See it in action
 
