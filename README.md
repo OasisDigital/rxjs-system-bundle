@@ -20,7 +20,7 @@ RxJS nor this repackaging are specific to Angular.
 
 ## Versions
 
-I will attempt to update this package for each new version of RxJS, from 5.0.0
+I will attempt to update this package for each new version of RxJS, from 5.0.1
 onward. Each version of this bundle package exactly matching each underlying
 RxJSversion.
 
