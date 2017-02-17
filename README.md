@@ -65,7 +65,7 @@ System.config({
     'npm:': 'https://unpkg.com/'
   },
   bundles: {
-    "npm:rxjs-system-bundle/Rx.system.js": [
+    "npm:rxjs-system-bundle@5.1.1/Rx.system.js": [
       "rxjs",
       "rxjs/*",
       "rxjs/operator/*",
@@ -105,9 +105,6 @@ System.config({
       defaultExtension: 'ts'
     },
     rxjs: {
-      defaultExtension: false
-    },
-    "https://unpkg.com/rxjs-system-bundle/Rx.system.js": {
       defaultExtension: false
     }
   }
