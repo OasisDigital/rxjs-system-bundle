@@ -1,3 +1,4 @@
 node_modules
 Rx.system.*
 *.tgz
+*.log

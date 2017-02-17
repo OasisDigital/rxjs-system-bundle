@@ -3,3 +3,4 @@ bin
 *.tgz
 .travis.yml
 .npmignore
+*.log
