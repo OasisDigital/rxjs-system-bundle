@@ -3,6 +3,8 @@
 This package provides a System bundle of RxJS. This is only a convenience
 package, it does not add or change any functionality.
 
+RxJS itself is found here:
+
 https://github.com/ReactiveX/rxjs
 
 The official NPM package provided by the RxJS project provide only source files
@@ -11,23 +13,23 @@ no longer provides its own System bundles.
 
 ##  Where is this useful?
 
-An NPM published System bundle is very convenient for use in a Plunkr or other
+An NPM-published System bundle is very convenient for use in a Plunkr or other
 contexts where a local build process is avoided.
 
 More broadly, all of this probably makes a lot of sense to you if you are
-familiar with Angular 2 (which depends on RxJS) and SystemJS.  However, neither
+familiar with Angular 2 (which depends on RxJS) and SystemJS. However, neither
 RxJS nor this repackaging are specific to Angular.
 
 ## Versions
 
 I will attempt to update this package for each new version of RxJS, from 5.0.1
 onward. Each version of this bundle package exactly matching each underlying
-RxJSversion.
+RxJS version.
 
 ## CDN
 
 Conveniently, the Unpkg service provides a CDN for NPM package contents.
-Therefore the UMB bundle is available at a URL like this:
+Therefore the System bundle is available at a URL like this:
 
 https://unpkg.com/rxjs-system-bundle@5.1.1/Rx.system.min.js
 
