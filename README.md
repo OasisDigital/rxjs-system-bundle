@@ -1,7 +1,7 @@
 # RxJS System Bundle
 
 This package provides a System bundle of RxJS. This is only a convenience
-package, it does not add or change any functionality.
+package, it does **not** add or change any functionality.
 
 RxJS itself is found here:
 
@@ -14,24 +14,26 @@ no longer provides its own System bundles.
 ##  Where is this useful?
 
 An NPM-published System bundle is very convenient for use in a Plunkr or other
-contexts where a local build process is avoided.
-
-More broadly, all of this probably makes a lot of sense to you if you are
-familiar with Angular 2 (which depends on RxJS) and SystemJS. However, neither
-RxJS nor this repackaging are specific to Angular.
+contexts where a local build process is avoided. All of this probably makes a
+lot of sense to you if you are familiar with Angular 2+ (which depends on RxJS)
+and SystemJS. However, neither RxJS nor this repackaging are specific to
+Angular.
 
 ## Versions
 
 I will attempt to update this package for each new version of RxJS, from 5.0.1
 onward. Each version of this bundle package exactly matching each underlying
-RxJS version.
+RxJS version. Sometime there is -N added to the end of the version, for tweaks
+to this bundling mechanism/repo which don't affect the RxJS version.
 
 ## CDN
 
 Conveniently, the Unpkg service provides a CDN for NPM package contents.
 Therefore the System bundle is available at a URL like this:
 
-https://unpkg.com/rxjs-system-bundle@5.1.1/Rx.system.min.js
+https://unpkg.com/rxjs-system-bundle@VERSIONHERE/Rx.system.min.js
+
+(Change VERSIONHERE to the RxJS version).
 
 Both minified and plain variations are published, both including source maps. To
 see the exact filenames available, install the package locally:
@@ -42,7 +44,7 @@ npm install rxjs-system-bundle
 
 and look in node_modules/rxjs-system-bundle, or look at:
 
-https://unpkg.com/rxjs-system-bundle@5.1.1/
+https://unpkg.com/rxjs-system-bundle@VERSIONHERE/
 
 (The set of files is the same for each version.)
 
@@ -50,7 +52,7 @@ https://unpkg.com/rxjs-system-bundle@5.1.1/
 
 The following Plunkr illustrates use of this package. Of course there are many
 other practical uses, but this one can be seen with one click. Unlike a default
-Angular 2 plunder, this one uses only a single request for all of RxJS.
+Angular 2+ plunker, this one uses only a single request for all of RxJS.
 
 https://plnkr.co/edit/Fy0jvu?p=preview
 
