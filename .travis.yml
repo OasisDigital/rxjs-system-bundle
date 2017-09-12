@@ -1,3 +1,19 @@
 language: node_js
 node_js:
   - "8"
+cache:
+  directories:
+    - node_modules
+install:
+  - npm update
+script:
+  - node bin/inc_version.js
+  - npm update
+  - node bin/make_bundle.js
+after_success:
+  - npm publish
+branches:
+  only:
+    - master
+notifications:
+  email: false
