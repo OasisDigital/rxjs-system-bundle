@@ -9,6 +9,8 @@ const rxjsVersion = package.devDependencies.rxjs;
 
 api.getdetails('rxjs', data => {
   const versionList = Object.keys(data.versions);
+  console.log('Available versions', versionList);
+  console.log('Using version', rxjsVersion);
   const currentIndex = versionList.indexOf(rxjsVersion);
   if (currentIndex == -1) {
     console.error("current version not in the list");

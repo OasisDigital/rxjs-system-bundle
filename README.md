@@ -26,6 +26,12 @@ onward. Each version of this bundle package exactly matching each underlying
 RxJS version. Sometime there is -N added to the end of the version, for tweaks
 to this bundling mechanism/repo which don't affect the RxJS version.
 
+To list all available versions, use npm:
+
+```
+npm show rxjs-system-bundle@* version
+```
+
 ## CDN
 
 Conveniently, the Unpkg service provides a CDN for NPM package contents.
