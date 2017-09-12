@@ -75,7 +75,7 @@ System.config({
     'npm:': 'https://unpkg.com/'
   },
   bundles: {
-    "npm:rxjs-system-bundle@5.1.1/Rx.system.js": [
+    "npm:rxjs-system-bundle@5.3.1/Rx.system.js": [
       "rxjs",
       "rxjs/*",
       "rxjs/operator/*",
