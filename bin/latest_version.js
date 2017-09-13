@@ -13,7 +13,7 @@ api.getdetails('rxjs', rxjs => {
 
     if (latest(rxjs) == latest(systemBundle)) {
       console.error("At most recent version");
-      process.exit(51);
+      process.exit(0);
     }
 
     const lastVersion = latest(rxjs);
