@@ -6,12 +6,13 @@ cache:
     - node_modules
 script:
   - node bin/latest_version.js
-after_success:
   - npm update
   - node bin/make_bundle.js
-  - npm publish
-branches:
-  only:
-    - master
+deploy:
+  provider: npm
+  email: ""
+  api_key: ""
+  on:
+    branch: master
 notifications:
   email: false
