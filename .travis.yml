@@ -4,10 +4,8 @@ node_js:
 cache:
   directories:
     - node_modules
-install:
-  - npm update
 script:
-  - node bin/inc_version.js
+  - node bin/latest_version.js
   - npm update
   - node bin/make_bundle.js
 after_success:
