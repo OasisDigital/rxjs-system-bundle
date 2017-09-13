@@ -6,9 +6,9 @@ cache:
     - node_modules
 script:
   - node bin/latest_version.js
+after_success:
   - npm update
   - node bin/make_bundle.js
-after_success:
   - npm publish
 branches:
   only:
