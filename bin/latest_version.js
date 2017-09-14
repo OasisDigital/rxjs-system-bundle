@@ -27,5 +27,7 @@ api.getdetails('rxjs', rxjs => {
         process.exit(60);
       }
     });
+
+    fs.writeFileSync('RESULT', 'deploy');
   });
 });

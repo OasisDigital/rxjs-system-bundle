@@ -1,18 +1,23 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - node bin/latest_version.js
-  - npm update
-  - node bin/make_bundle.js
+- echo no-need-to-deploy >RESULT
+- node bin/latest_version.js
+- RESULT=$(cat RESULT)
+- npm update
+- node bin/make_bundle.js
 deploy:
   provider: npm
-  email: ""
-  api_key: ""
+  email: kyle.cordes@oasisdigital.com
+  api_key:
+    secure: gaG+iRsYTYCpffTeBPvtIrwog7CIkPibNlaRnN9xWckRzoEaN6Ta0EJ9lI6QLBXJJ3MGw0BDHSCBYnlZ3z3vjVyBkH1iT8jynpi3zkrDBfuffgI7nNiEvU+xTuEMLvzpW1U/nWjqXtfmGc4Vup5Q8wwcpKdzagCFStEba3zJPM5tn8BYbTKvDoInXfjGnCG84WL5tPwQB/H30+hHii0KLP5Zbgsi2ZqkEWANDAFl/X5RTNq5HgZdE31V9HPp1/bfbS7tgSgWtmIgPG5LR8LRYc/W6MWUrLs/7AzONN/G7rKsh2rE1/zQYcMxOxqs3HolmPupzoh3kyW57iwAU362bXyGeZ50DuwhCMUpfar1PF54tku4pFkoUSbDkLrFKoyD7+uTELqRbfUceQu3qm9IRCbFeG7ZBDJ1K3hGqMk26fLo6QEKFPxF29ea2nOZaEEyCM9EiR4a4ZvipiDCEkhLlB3nuZ0bgK41ZzmnlDiwb57yp1NE9QRnwSY7SaWNw3P40JvN9JTTDwPyqDvRxtkM6Fj0G9Qx8SyfxGZw2zlcU/IpVvUlNMfiqdEq6j1lrZddpFylwvV+9kc4mi5gyWjHrmMV6sLSNuFAZqAYlAKB35R+PF/CLvBAl9+ZSHDKIswBzcxI9UoYs9DIv0nGPM6oAeC2cnG2f3pffzNTBijsX64=
   on:
     branch: master
+    repo: OasisDigital/rxjs-system-bundle
+    condition: $RESULT = deploy
 notifications:
   email: false
