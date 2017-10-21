@@ -8,7 +8,9 @@ script:
 - echo no-need-to-deploy >RESULT
 - node bin/latest_version.js
 - RESULT=$(cat RESULT)
+- npm install
 - npm update
+- sed -e "s/'\./'.\/operators/" <node_modules/rxjs/operators/index.js >node_modules/rxjs/operators.js
 - node bin/make_bundle.js
 deploy:
   provider: npm
@@ -19,5 +21,4 @@ deploy:
     branch: master
     repo: OasisDigital/rxjs-system-bundle
     condition: $RESULT = deploy
-notifications:
-  email: false
+  skip_cleanup: true
