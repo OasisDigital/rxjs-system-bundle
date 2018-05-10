@@ -1,36 +1,38 @@
-const Builder = require('systemjs-builder');
-const matchVersion = require('./match_version');
+const Builder = require("systemjs-builder");
+const matchVersion = require("./match_version");
 
 function bundle() {
-  const builder = new Builder('./');
+  const builder = new Builder("./");
   builder.config({
-    paths: {
-      'rxjs/*': 'node_modules/rxjs/*.js',
-      'symbol-observable/*': 'node_modules/symbol-observable/*',
-    },
     map: {
-      'rxjs': 'node_modules/rxjs'
+      rxjs: "node_modules/rxjs"
     },
     packages: {
-      'rxjs': {
-        main: 'Rx.js',
-        defaultExtension: 'js'
+      rxjs: {
+        main: "index.js",
+        defaultExtension: "js"
       },
-      'symbol-observable': {
-        main: 'index.js'
+      "rxjs/operators": {
+        main: "index.js",
+        defaultExtension: "js"
+      },
+      "rxjs/Observable": {
+        defaultExtension: "js"
       }
     }
   });
 
   console.log("Bundling Rx");
-  return builder.bundle('rxjs', 'Rx.system.js', {
-    sourceMaps: true
-  }).then(ignored => {
-    builder.bundle('rxjs', 'Rx.system.min.js', {
-      sourceMaps: true,
-      minify: true
+  return builder
+    .bundle("rxjs + rxjs/operators", "Rx.system.js", {
+      sourceMaps: true
+    })
+    .then(ignored => {
+      builder.bundle("rxjs + rxjs/operators", "Rx.system.min.js", {
+        sourceMaps: true,
+        minify: true
+      });
     });
-  });
 }
 
 matchVersion(err => {
