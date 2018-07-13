@@ -1,6 +1,6 @@
 {
   "name": "rxjs-system-bundle",
-  "version": "5.5.0",
+  "version": "6.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,9 @@
   "devDependencies": {
     "api-npm": "^1.0.0",
     "del-cli": "^1.1.0",
-    "rxjs": "5.5.0",
-    "symbol-observable": "^1.0.4",
+    "rxjs": "6.2.1",
+    "rxjs-compat": "6.2.1",
+    "symbol-observable": "^1.2.0",
     "systemjs": "^0.19.41",
     "systemjs-builder": "^0.15.34"
   },

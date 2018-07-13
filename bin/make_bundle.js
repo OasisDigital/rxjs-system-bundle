@@ -1,43 +1,44 @@
+const fs = require('fs');
 const Builder = require('systemjs-builder');
-const matchVersion = require('./match_version');
+const builder = new Builder('./');
 
-function bundle() {
-  const builder = new Builder('./');
-  builder.config({
-    paths: {
-      'rxjs/*': 'node_modules/rxjs/*.js',
-      'symbol-observable/*': 'node_modules/symbol-observable/*',
+builder.config({
+
+  paths: {
+    'rxjs/*': 'rxjs/*.js',
+    'rxjs-compat/*': 'rxjs-compat/*.js',
+    'rxjs/internal-compatibility': 'rxjs/internal-compatibility/index.js',
+    'rxjs/testing': 'rxjs/testing/index.js',
+    'rxjs/ajax': 'rxjs/ajax/index.js',
+    'rxjs/operators': 'rxjs/operators/index.js',
+    'rxjs/webSocket': 'rxjs/webSocket/index.js',
+  },
+  packages: {
+    'rxjs': {
+      main: 'index.js',
+      defaultExtension: 'js'
     },
-    map: {
-      'rxjs': 'node_modules/rxjs'
-    },
-    packages: {
-      'rxjs': {
-        main: 'Rx.js',
-        defaultExtension: 'js'
-      },
-      'symbol-observable': {
-        main: 'index.js'
-      }
+    'rxjs-compat': {
+      main: "index.js",
+      defaultExtension: "js"
     }
-  });
+  },
+  baseURL: "node_modules"
+});
 
-  console.log("Bundling Rx");
-  return builder.bundle('rxjs', 'Rx.system.js', {
-    sourceMaps: true
-  }).then(ignored => {
-    builder.bundle('rxjs', 'Rx.system.min.js', {
-      sourceMaps: true,
-      minify: true
-    });
-  });
-}
+const options = {
+  normalize: true,
+  runtime: false,
+  sourceMaps: false,
+  sourceMapContents: false,
+  minify: true,
+  mangle: false
+};
 
-matchVersion(err => {
-  if (err) {
-    console.error(err);
-    process.exit(60);
-  } else {
-    bundle();
-  }
+builder.bundle('rxjs + rxjs/Rx + rxjs/Observable', options).then(output => {
+  let code = output.source
+    .replace(/rxjs\/index/gm, 'rxjs')
+    .replace(/"rxjs-compat\/add\/observable\//gm, '"rxjs/add/observable/')
+    .replace(/"rxjs-compat\/add\/operator\//gm, '"rxjs/add/operator/');
+  fs.writeFileSync('./Rx.system.min.js', code);
 });
