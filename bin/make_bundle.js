@@ -40,5 +40,5 @@ builder.bundle('rxjs + rxjs/Rx + rxjs/Observable', options).then(output => {
     .replace(/rxjs\/index/gm, 'rxjs')
     .replace(/"rxjs-compat\/add\/observable\//gm, '"rxjs/add/observable/')
     .replace(/"rxjs-compat\/add\/operator\//gm, '"rxjs/add/operator/');
-  fs.writeFileSync('./Rxjs.system.min.js', code);
+  fs.writeFileSync('./Rx.system.min.js', code);
 });
